@@ -1,0 +1,29 @@
+import 'normalize.css'
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyles = createGlobalStyle`
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #000;;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.25s linear;
+  }
+
+  #root {
+    width: 85vw;
+    padding-bottom: 5%;
+    max-width: 960px;
+  }
+`
