@@ -1,3 +1,9 @@
+# You can play it online
+
+You can play the game by [clicking here](https://tic-tac-toe.rev.earth/). o going to https://tic-tac-toe.rev.earth/
+
+try to win the machine :)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
