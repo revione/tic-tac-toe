@@ -17,11 +17,11 @@ const Container = styled.div`
 `
 
 const Link = styled.a`
-  color: blue;
+  color: #11118e;
   text-decoration: none;
 
   &:hover {
-    color: grey;
+    color: #111165;
   }
 `
 
