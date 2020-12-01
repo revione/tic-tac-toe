@@ -49,9 +49,10 @@ const Container = styled.div`
   margin: 20px auto;
 `
 
-const TextInfo = styled.div`
-  margin: 10px 0;
+const TextInfo = styled.h2`
+  margin: 10px 0 30px;
   font-size: 1.25rem;
+  font-weight: normal;
 `
 
 export default Main

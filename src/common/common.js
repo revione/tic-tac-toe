@@ -116,8 +116,10 @@ const evaluate = (cells, computerType) => {
   return 0
 }
 
-const minimax = (cells, depth, computerType, isMax) => {
+// let counter = 0
+const minimax = (cells, depth, alpha, beta, computerType, isMax) => {
   const score = evaluate(cells, computerType)
+  // counter++
   // console.log(`score: ${score} depth: ${depth} computerType: ${computerType} isMax: ${isMax}`)
 
   // If Maximizer has won the game return his/her evaluated score
@@ -142,9 +144,12 @@ const minimax = (cells, depth, computerType, isMax) => {
       if (cell === null) {
         // Make a move
         const nextCells = replace(cells, i, computerType)
-
+        const value = minimax(nextCells, depth + 1, alpha, beta, computerType, !isMax)
         // Call minimax recursively and choose the maximum value
-        best = Math.max(best, minimax(nextCells, depth + 1, computerType, !isMax))
+        best = Math.max(best, value)
+        alpha = Math.max(alpha, value)
+
+        if (beta <= alpha) break
         // console.log(
         //   `max => best: ${best}, depth: ${depth}, computerType: ${computerType}, isMax: ${isMax}`
         // )
@@ -159,15 +164,20 @@ const minimax = (cells, depth, computerType, isMax) => {
       if (cell === null) {
         // Make a move
         const nextCells = replace(cells, i, 1 - computerType)
-
+        const value = minimax(nextCells, depth + 1, alpha, beta, computerType, !isMax)
         // Call minimax recursively and choose the minimum value
-        best = Math.min(best, minimax(nextCells, depth + 1, computerType, !isMax))
+        best = Math.min(best, value)
+        beta = Math.min(beta, value)
+
+        if (beta <= alpha) break
         // console.log(
         //   `min => best: ${best}, depth: ${depth}, computerType: ${computerType}, isMax: ${isMax}`
         // )
       }
     }
   }
+
+  // console.log(`counter =>  ${counter}`)
 
   return best
 }
@@ -186,7 +196,7 @@ export const findBestMove = (cells, computerType) => {
       const nextCells = replace(cells, i, computerType)
 
       // Compute evaluation function for this move.
-      const moveVal = minimax(nextCells, 0, computerType, false)
+      const moveVal = minimax(nextCells, 0, -Infinity, +Infinity, computerType, false)
 
       // console.log(`moveVal:  ${moveVal} i => ${i}`)
 
