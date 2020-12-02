@@ -1,8 +1,8 @@
 # You can play it online
 
-You can play the game by [clicking here](https://tic-tac-toe.rev.earth/). o going to https://tic-tac-toe.rev.earth/
+You can play the game by [clicking here](https://tic-tac-toe.rev.earth/).
 
-try to win the machine :)
+try to beat the machine :)
 
 # Getting Started with Create React App
 
