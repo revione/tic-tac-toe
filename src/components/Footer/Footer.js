@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Footer = () => (
   <Container>
-    <Link href='https://github.com/revione' alt='repositorie of game'>
+    <Link href='https://github.com/revione/tic-tac-toe' alt='repository game'>
       Github
     </Link>
   </Container>
